@@ -4,12 +4,14 @@ import android.app.Application
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy.Builder
 import android.os.StrictMode.VmPolicy
+import com.alexfin90.stockstracker.logging.plantTimberTree
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class StocksTrackerApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        plantTimberTree()
         setStrictModePolicy()
     }
 }
