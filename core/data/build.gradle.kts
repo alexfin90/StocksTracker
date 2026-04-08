@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.alexfin90.stockstracker"
+    namespace = "$applicationPackage.$coreModuleName.$coreDataModuleName"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
