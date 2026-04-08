@@ -1,22 +1,14 @@
+
 plugins {
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.stockstracker.library)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "$applicationPackage.$coreModuleName.$coreDataModuleName"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
-
     defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -26,16 +18,15 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
 }
 
-dependencies {
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+dependencies{
+    implementation(project(":$coreModuleName:$commonModuleName"))
+    implementation(project(":$coreModuleName:$coreDomainModuleName"))
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.moshi)
+    implementation(libs.okhttp)
+    implementation(libs.moshi.kotlin)
+    ksp(libs.moshi.kotlin.codegen)
 }
+
