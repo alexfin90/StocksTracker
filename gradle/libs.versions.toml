@@ -123,14 +123,15 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 #Crashlytics
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
-#Cvshowcase Custom Plugins
-cvshowcase-application = { id = "cvshowcase.application" }
-cvshowcase-library = { id = "cvshowcase.library" }
-cvshowcase-jvm-library = { id = "cvshowcase.jvm.library" }
-cvshowcase-feature= { id = "cvshowcase.feature" }
-cvshowcase-hilt = { id = "cvshowcase.hilt" }
-cvshowcase-compose-navigation = { id = "cvshowcase.compose.navigation" }
-cvshowcase-flavors = { id = "cvshowcase.flavors" }
+
+#StocksTracker Custom Plugins
+stockstracker-application = { id = "stockstracker.application" }
+stockstracker-library = { id = "stockstracker.library" }
+stockstracker-jvm-library = { id = "stockstracker.jvm.library" }
+stockstracker-feature= { id = "stockstracker.feature" }
+stockstracker-hilt = { id = "stockstracker.hilt" }
+stockstracker-compose-navigation = { id = "stockstracker.compose.navigation" }
+stockstracker-flavors = { id = "stockstracker.flavors" }
 
 
 
