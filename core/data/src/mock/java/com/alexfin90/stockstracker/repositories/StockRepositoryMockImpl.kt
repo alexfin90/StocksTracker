@@ -60,7 +60,7 @@ class StockRepositoryMockImpl @Inject constructor() : StockRepository {
     override val stocks: StateFlow<List<Stock>> = _stocks.asStateFlow()
 
     private val _connectionActive = MutableStateFlow(false)
-
+    override val connectionActive: StateFlow<Boolean> = _connectionActive.asStateFlow()
 
     override fun start() {
         Timber.d("start")

@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface StockRepository {
     val stocks: Flow<List<Stock>>
+    val connectionActive: Flow<Boolean>
 
     fun start()
     fun stop()
