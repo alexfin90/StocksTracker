@@ -26,6 +26,7 @@ class StockRepositoryMockImpl @Inject constructor(
 
     private val _connectionActive = MutableStateFlow(false)
     private val _stockMap = MutableStateFlow(initialStocks())
+    private val _connectionError = MutableStateFlow<String?>(null)
 
 
     init {
@@ -33,6 +34,7 @@ class StockRepositoryMockImpl @Inject constructor(
     }
 
     override val connectionActive: Flow<Boolean> = _connectionActive.asStateFlow()
+    override val connectionError: Flow<String?> = _connectionError.asStateFlow()
 
 
     override val stocks: Flow<List<Stock>> =
@@ -59,6 +61,7 @@ class StockRepositoryMockImpl @Inject constructor(
                 when (event) {
                     StockSocketEvent.Connected -> {
                         _connectionActive.value = true
+                        _connectionError.value = null
                     }
 
                     StockSocketEvent.Disconnected -> {
@@ -66,6 +69,7 @@ class StockRepositoryMockImpl @Inject constructor(
                     }
 
                     is StockSocketEvent.Failure -> {
+                        _connectionError.value = event.throwable.message
                         _connectionActive.value = false
                     }
 
