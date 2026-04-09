@@ -3,39 +3,41 @@ package com.alexfin90.stockstracker
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.alexfin90.StocksFeedViewModelContract
+import com.alexfin90.stockstracker.dispatcher.DefaultDispatcher
 import com.alexfin90.stockstracker.mappers.toUiModel
+import com.alexfin90.stockstracker.usecases.ObserveConnectionErrorUseCase
 import com.alexfin90.stockstracker.usecases.ObserveSortedStocksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.toPersistentList
-import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
-import timber.log.Timber
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 
 @HiltViewModel
 class StocksFeedViewModel @Inject constructor(
-    private val observeSortedStocksUseCase: ObserveSortedStocksUseCase,
+    observeSortedStocksUseCase: ObserveSortedStocksUseCase,
+    observeConnectionErrorUseCase: ObserveConnectionErrorUseCase,
+    @param:DefaultDispatcher private val defaultDispatcher: CoroutineDispatcher,
 ) : ViewModel(), StocksFeedViewModelContract {
 
-    private var _uiState = MutableStateFlow(StocksFeedScreenState())
-    override val uiState: StateFlow<StocksFeedScreenState> = _uiState.asStateFlow()
-
-    init {
-        viewModelScope.launch {
-            observeSortedStocksUseCase().collect { stocks ->
-                Timber.d("stocks: $stocks")
-                _uiState.update {
-                    StocksFeedScreenState(
-                        isLoading = false,
-                        stocks = stocks.map { it.toUiModel() }.toPersistentList(),
-                        error = null,
-                    )
-                }
-            }
-        }
-    }
+    override val uiState: StateFlow<StocksFeedScreenState> =
+        combine(
+            observeSortedStocksUseCase(),
+            observeConnectionErrorUseCase(),
+        ) { stocks, error ->
+            StocksFeedScreenState(
+                isLoading = false,
+                stocks = stocks.map { it.toUiModel() }.toPersistentList(),
+                error = if (error != null) "$error\nTrying to reconnect..." else null,
+            )
+        }.flowOn(defaultDispatcher).stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5_000),
+            initialValue = StocksFeedScreenState(isLoading = true),
+        )
 }
