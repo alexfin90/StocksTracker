@@ -50,7 +50,7 @@ class StockRepositoryMockImpl @Inject constructor() : StockRepository {
             symbol = "TSLA",
             name = "Tesla Inc.",
             description = "Tesla designs, develops, manufactures, and sells fully electric vehicles, energy generation, and storage systems.",
-            priceUsd = 248.90,
+            priceUsd = 948.90,
             previousPriceUsd = 245.10,
             updatedAtMillis = System.currentTimeMillis(),
         ),
