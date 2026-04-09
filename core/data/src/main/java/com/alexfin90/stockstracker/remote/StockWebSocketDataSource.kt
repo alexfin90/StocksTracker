@@ -136,6 +136,7 @@ class StockWebSocketDataSource @Inject constructor(
                 val nonFatal = NonFatalException(
                     code = "STOCK_WEBSOCKET_FAILURE",
                     message = "Stock WebSocket connection failed",
+                    cause = t
                 )
                 t.printStackTrace()
                 Timber.e(
@@ -157,7 +158,7 @@ class StockWebSocketDataSource @Inject constructor(
 
         reconnectJob = applicationScope.launch(ioDispatcher) {
             delay(RECONNECT_DELAY_MS)
-            Timber.d("Attempting to reconnect WebSocket...")
+            Timber.w("Attempting to reconnect WebSocket...")
             openSocket()
         }
     }
