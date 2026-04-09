@@ -59,6 +59,7 @@ class StockMockDataSource @Inject constructor(
         }
     }
 
+    //simulate random price updates
     private fun sendRandomUpdates() {
         val timestamp = System.currentTimeMillis()
         currentPrices.forEach { (symbol, price) ->
