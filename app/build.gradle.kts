@@ -8,6 +8,13 @@ plugins {
 
 android {
     namespace = project.applicationPackage
+    defaultConfig {
+        buildConfigField(
+            "String",
+            "DEEPLINK_BASE_URL",
+            "\"stockstracker://stock.detail\""
+        )
+    }
 }
 
 dependencies{
