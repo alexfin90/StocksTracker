@@ -60,5 +60,8 @@ private fun StocksTrackerNavHost(modifier: Modifier = Modifier) {
                 }
             )
         }
+        composable<Route.StockDetail> {
+            StockDetailScreen(modifier = Modifier.fillMaxSize())
+        }
     }
 }
