@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -59,8 +60,9 @@ private fun StockDetailContent(stock: UiStockDetail) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = stock.symbol,
+            text = stock.name + " (${stock.symbol})",
             style = MaterialTheme.typography.displayLarge,
+            textAlign = TextAlign.Start,
         )
         Spacer(modifier = Modifier.height(8.dp))
         Row(
