@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -24,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -56,14 +58,16 @@ fun StockRow(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                modifier = Modifier.animatedFlashBackground(
-                    triggerKey = stock.priceUsd,
-                    flashColor = if (stock.isUp) {
-                        Color.Green.copy(alpha = 0.5f)
-                    } else {
-                        Color.Red.copy(alpha = 0.5f)
-                    }
-                ),
+                modifier = Modifier
+                    .animatedFlashBackground(
+                        triggerKey = stock.priceUsd,
+                        flashColor = if (stock.isUp) {
+                            Color.Green.copy(alpha = 0.5f)
+                        } else {
+                            Color.Red.copy(alpha = 0.5f)
+                        }
+                    )
+                    .padding(8.dp),
                 text = "$%.2f".format(stock.priceUsd),
                 style = MaterialTheme.typography.titleMedium,
             )
@@ -119,5 +123,8 @@ fun Modifier.animatedFlashBackground(
         label = "flashBackgroundColor"
     )
 
-    background(animatedColor)
+    background(animatedColor, shape = CircleShape).shadow(
+        shape = CircleShape,
+        elevation = 4.dp
+    )
 }
