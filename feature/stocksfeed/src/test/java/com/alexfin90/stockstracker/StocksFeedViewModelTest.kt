@@ -86,7 +86,7 @@ class StocksFeedViewModelTest {
         val uiStock = viewModel.uiState.value.stocks.first { it.symbol == "AAPL" }
         assertEquals("Apple Inc.", uiStock.name)
         assertEquals(150.0, uiStock.priceUsd, 0.001)
-        assertTrue(uiStock.isIncrease)
+        assertTrue(uiStock.isUp)
     }
 
     @Test
@@ -106,7 +106,7 @@ class StocksFeedViewModelTest {
         advanceUntilIdle()
 
         val uiStock = viewModel.uiState.value.stocks.first()
-        assertEquals(false, uiStock.isIncrease)
+        assertEquals(false, uiStock.isUp)
     }
 
     @Test

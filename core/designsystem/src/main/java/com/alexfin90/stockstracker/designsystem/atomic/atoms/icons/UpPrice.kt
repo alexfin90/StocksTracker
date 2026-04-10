@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-val up: ImageVector
+val UpPriceIcon: ImageVector
     get() {
         if (_up != null) return _up!!
 
@@ -65,7 +65,7 @@ private fun IconPreview() {
     MaterialTheme {
         Icon(
             modifier = Modifier.size(24.dp),
-            imageVector = up,
+            imageVector = UpPriceIcon,
             contentDescription = null,
             tint = Color.Green
         )

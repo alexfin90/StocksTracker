@@ -7,5 +7,5 @@ data class UiStock(
     val symbol: String,
     val name: String,
     val priceUsd: Double,
-    val isIncrease: Boolean
+    val isUp: Boolean
 )

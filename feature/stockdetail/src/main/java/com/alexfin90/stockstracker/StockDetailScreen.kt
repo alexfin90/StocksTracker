@@ -65,7 +65,7 @@ private fun StockDetailContent(stock: UiStockDetail) {
                 style = MaterialTheme.typography.headlineMedium,
             )
             Spacer(modifier = Modifier.width(4.dp))
-            stock.isIncrease.let { isUp ->
+            stock.isUp.let { isUp ->
                 Text(
                     text = if (isUp) "\u2191" else "\u2193",
                     color = if (isUp) Color.Green else Color.Red,

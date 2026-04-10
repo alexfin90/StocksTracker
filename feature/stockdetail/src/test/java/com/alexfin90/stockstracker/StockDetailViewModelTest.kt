@@ -78,7 +78,7 @@ class StockDetailViewModelTest {
         assertEquals("Apple Inc.", state.stock.name)
         assertEquals("Consumer electronics", state.stock.description)
         assertEquals(150.0, state.stock.priceUsd, 0.001)
-        assertTrue(state.stock.isIncrease)
+        assertTrue(state.stock.isUp)
         assertNull(state.error)
     }
 
@@ -130,7 +130,7 @@ class StockDetailViewModelTest {
         fakeRepository.emitStocks(listOf(decreasingStock))
         advanceUntilIdle()
 
-        assertEquals(false, viewModel.uiState.value.stock!!.isIncrease)
+        assertEquals(false, viewModel.uiState.value.stock!!.isUp)
     }
 
     @Test
@@ -142,7 +142,7 @@ class StockDetailViewModelTest {
         fakeRepository.emitStocks(listOf(noPrevStock))
         advanceUntilIdle()
 
-        assertEquals(false, viewModel.uiState.value.stock!!.isIncrease)
+        assertEquals(false, viewModel.uiState.value.stock!!.isUp)
     }
 
     @Test

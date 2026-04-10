@@ -7,5 +7,5 @@ fun Stock.toUiModel() = UiStock(
     symbol = this.symbol,
     name = this.name,
     priceUsd = this.priceUsd,
-    isIncrease = this.isIncrease == true
+    isUp = this.isUp == true
 )
