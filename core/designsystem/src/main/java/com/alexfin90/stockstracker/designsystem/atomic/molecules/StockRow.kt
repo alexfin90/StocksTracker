@@ -1,5 +1,6 @@
 package com.alexfin90.stockstracker.designsystem.atomic.molecules
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,6 +31,7 @@ fun StockRow(
 ) {
     Row(
         modifier = modifier
+            .border(width = 1.dp, color = MaterialTheme.colorScheme.inverseSurface)
             .fillMaxWidth()
             .clickable(onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 12.dp),
