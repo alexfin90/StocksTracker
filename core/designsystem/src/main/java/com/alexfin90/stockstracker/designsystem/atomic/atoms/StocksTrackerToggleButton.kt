@@ -1,4 +1,4 @@
-package com.alexfin90.stockstracker.designsystem.atomic.atoms.component
+package com.alexfin90.stockstracker.designsystem.atomic.atoms
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button

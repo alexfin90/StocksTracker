@@ -1,4 +1,4 @@
-package com.alexfin90.stockstracker.designsystem.atomic.atom.component
+package com.alexfin90.stockstracker.designsystem.atomic.atom
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -12,15 +12,15 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.alexfin90.stockstracker.designsystem.atomic.atoms.component.ConnectionStatusIndicator
-import com.alexfin90.stockstracker.designsystem.atomic.atoms.component.StocksTrackerToggleButton
-import org.junit.Assert.assertEquals
+import com.alexfin90.stockstracker.designsystem.atomic.atoms.ConnectionStatusIndicator
+import com.alexfin90.stockstracker.designsystem.atomic.atoms.StocksTrackerToggleButton
+import junit.framework.TestCase.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class ComponentTest {
+class AtomsTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()

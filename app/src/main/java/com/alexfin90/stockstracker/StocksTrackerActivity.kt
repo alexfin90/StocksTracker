@@ -20,8 +20,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navDeepLink
-import com.alexfin90.stockstracker.designsystem.atomic.atoms.component.ConnectionStatusIndicator
-import com.alexfin90.stockstracker.designsystem.atomic.atoms.component.StocksTrackerToggleButton
+import com.alexfin90.stockstracker.designsystem.atomic.atoms.ConnectionStatusIndicator
+import com.alexfin90.stockstracker.designsystem.atomic.atoms.StocksTrackerToggleButton
 import com.alexfin90.stockstracker.designsystem.theme.StocksTrackerTheme
 import com.alexfin90.stockstracker.navigation.Route
 import dagger.hilt.android.AndroidEntryPoint
