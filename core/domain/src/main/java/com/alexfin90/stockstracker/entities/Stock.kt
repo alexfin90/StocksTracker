@@ -8,6 +8,6 @@ data class Stock(
     val previousPriceUsd: Double?,
     val updatedAtMillis: Long,
 ) {
-    val isIncrease: Boolean?
+    val isUp: Boolean?
         get() = previousPriceUsd?.let { priceUsd > it }
 }

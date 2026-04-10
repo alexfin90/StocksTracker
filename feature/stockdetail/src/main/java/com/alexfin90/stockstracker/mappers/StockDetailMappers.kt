@@ -9,6 +9,6 @@ fun Stock.toUiModel(): UiStockDetail {
         name = this.name,
         description = this.description,
         priceUsd = this.priceUsd,
-        isIncrease = this.isIncrease == true
+        isUp = this.isUp == true
     )
 }

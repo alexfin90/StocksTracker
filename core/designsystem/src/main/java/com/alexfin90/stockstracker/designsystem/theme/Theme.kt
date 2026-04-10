@@ -10,71 +10,101 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Indigo10
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Indigo20
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Indigo40
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Indigo80
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Indigo90
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Red10
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Red20
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Red30
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Red40
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Red80
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Red90
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Sky10
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Sky20
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Sky40
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Sky80
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Sky90
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate10
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate20
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate30
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate40
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate50
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate60
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate80
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate90
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate95
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Slate99
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Teal10
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Teal20
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Teal40
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Teal80
+import com.alexfin90.stockstracker.designsystem.atomic.colors.Teal90
+
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFF7C9BFF),
-    onPrimary = Color(0xFF0E1A3A),
-    primaryContainer = Color(0xFF1D2B57),
-    onPrimaryContainer = Color(0xFFDCE3FF),
+    primary = Indigo80,
+    onPrimary = Indigo10,
+    primaryContainer = Indigo20,
+    onPrimaryContainer = Indigo90,
 
-    secondary = Color(0xFF4FD1C5),
-    onSecondary = Color(0xFF062B28),
-    secondaryContainer = Color(0xFF124B46),
-    onSecondaryContainer = Color(0xFFB8F3ED),
+    secondary = Teal80,
+    onSecondary = Teal10,
+    secondaryContainer = Teal20,
+    onSecondaryContainer = Teal90,
 
-    tertiary = Color(0xFF7DD3FC),
-    onTertiary = Color(0xFF0A2A3A),
-    tertiaryContainer = Color(0xFF153F56),
-    onTertiaryContainer = Color(0xFFD2F1FF),
+    tertiary = Sky80,
+    onTertiary = Sky10,
+    tertiaryContainer = Sky20,
+    onTertiaryContainer = Sky90,
 
-    error = Color(0xFFFF7A7A),
-    onError = Color(0xFF4A1010),
-    errorContainer = Color(0xFF6A1E1E),
-    onErrorContainer = Color(0xFFFFDADA),
+    error = Red80,
+    onError = Red20,
+    errorContainer = Red30,
+    onErrorContainer = Red90,
 
-    background = Color(0xFF0F172A),
-    onBackground = Color(0xFFE5E7EB),
-    surface = Color(0xFF111827),
-    onSurface = Color(0xFFE5E7EB),
-    surfaceVariant = Color(0xFF243041),
-    onSurfaceVariant = Color(0xFFB6C2CF),
-
-    inverseSurface = Color(0xFFE5E7EB),
-    inverseOnSurface = Color(0xFF111827),
-    outline = Color(0xFF607086),
+    background = Slate10,
+    onBackground = Slate90,
+    surface = Slate10,
+    onSurface = Slate90,
+    surfaceVariant = Slate30,
+    onSurfaceVariant = Slate80,
+    inverseSurface = Slate90,
+    inverseOnSurface = Slate10,
+    outline = Slate60,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF2F5BFF),
+    primary = Indigo40,
     onPrimary = Color.White,
-    primaryContainer = Color(0xFFDCE4FF),
-    onPrimaryContainer = Color(0xFF0E1A3A),
+    primaryContainer = Indigo90,
+    onPrimaryContainer = Indigo10,
 
-    secondary = Color(0xFF0F9D8A),
+    secondary = Teal40,
     onSecondary = Color.White,
-    secondaryContainer = Color(0xFFC9F2EC),
-    onSecondaryContainer = Color(0xFF062B28),
+    secondaryContainer = Teal90,
+    onSecondaryContainer = Teal10,
 
-    tertiary = Color(0xFF0284C7),
+    tertiary = Sky40,
     onTertiary = Color.White,
-    tertiaryContainer = Color(0xFFD0F0FF),
-    onTertiaryContainer = Color(0xFF0A2A3A),
+    tertiaryContainer = Sky90,
+    onTertiaryContainer = Sky10,
 
-    error = Color(0xFFC62828),
+    error = Red40,
     onError = Color.White,
-    errorContainer = Color(0xFFFFDAD6),
-    onErrorContainer = Color(0xFF410002),
+    errorContainer = Red90,
+    onErrorContainer = Red10,
 
-    background = Color(0xFFF8FAFC),
-    onBackground = Color(0xFF0F172A),
-    surface = Color(0xFFFFFFFF),
-    onSurface = Color(0xFF111827),
-    surfaceVariant = Color(0xFFE2E8F0),
-    onSurfaceVariant = Color(0xFF475569),
-
-    inverseSurface = Color(0xFF1E293B),
-    inverseOnSurface = Color(0xFFF8FAFC),
-    outline = Color(0xFF94A3B8),
+    background = Slate99,
+    onBackground = Slate10,
+    surface = Color.White,
+    onSurface = Slate10,
+    surfaceVariant = Slate90,
+    onSurfaceVariant = Slate40,
+    inverseSurface = Slate20,
+    inverseOnSurface = Slate95,
+    outline = Slate50,
 )
 
 @Composable

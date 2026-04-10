@@ -1,7 +1,7 @@
-import com.android.build.gradle.LibraryExtension
 import com.alexfin90.stockstracker.configureFlavors
 import com.alexfin90.stockstracker.configureKotlinAndroid
 import com.alexfin90.stockstracker.libs
+import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -43,6 +43,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 add("implementation", libs.findLibrary("kotlinx-serialization-json").get())
                 add("testImplementation", libs.findLibrary("junit").get())
                 add("testImplementation", libs.findLibrary("kotlinx-coroutines-test").get())
+                add("testImplementation", libs.findLibrary("robolectric").get())
                 add("androidTestImplementation", libs.findLibrary("androidx-junit").get())
                 add("androidTestImplementation", libs.findLibrary("androidx-espresso-core").get())
 
