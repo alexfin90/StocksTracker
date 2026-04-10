@@ -1,8 +1,8 @@
 package com.alexfin90.stockstracker
 
 
+import com.alexfin90.stockstracker.designsystem.atomic.molecules.UiStockRow
 import com.alexfin90.stockstracker.entities.Stock
-import com.alexfin90.stockstracker.uimodels.UiStock
 import com.alexfin90.stockstracker.usecases.ObserveConnectionErrorUseCase
 import com.alexfin90.stockstracker.usecases.ObserveSortedStocksUseCase
 import kotlinx.collections.immutable.persistentListOf
@@ -54,7 +54,7 @@ class StocksFeedViewModelTest {
         val state = viewModel.uiState.value
 
         assertTrue(state.isLoading)
-        assertEquals(persistentListOf<UiStock>(), state.stocks)
+        assertEquals(persistentListOf<UiStockRow>(), state.stocks)
         assertNull(state.error)
     }
 

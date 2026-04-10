@@ -1,9 +1,9 @@
-package com.alexfin90.stockstracker.uimodels
+package com.alexfin90.stockstracker.designsystem.atomic.molecules
 
 import androidx.compose.runtime.Immutable
 
 @Immutable
-data class UiStock(
+data class UiStockRow(
     val symbol: String,
     val name: String,
     val priceUsd: Double,
