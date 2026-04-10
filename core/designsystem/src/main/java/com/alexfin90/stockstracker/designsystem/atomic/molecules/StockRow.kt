@@ -48,7 +48,7 @@ fun StockRow(
             Spacer(modifier = Modifier.width(4.dp))
             Icon(
                 imageVector = if (stock.isUp) UpPriceIcon else DownPriceIcon,
-                contentDescription = null,
+                contentDescription = if (stock.isUp) "price up" else "price down",
                 tint = if (stock.isUp) Color.Green else Color.Red
             )
         }
