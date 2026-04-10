@@ -49,7 +49,6 @@ private fun StocksTrackerApp(
     StocksTrackerAppContent(isConnected, viewModel::onToggleConnection)
 }
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun StocksTrackerAppContent(
@@ -62,16 +61,14 @@ private fun StocksTrackerAppContent(
         topBar = {
             TopAppBar(
                 title = {
-                    ConnectionStatusIndicator(
-                        isConnected = isConnected
-                    )
+                    ConnectionStatusIndicator(isConnected = isConnected)
                 },
                 actions = {
                     StocksTrackerToggleButton(
                         isConnected = isConnected,
                         onClick = onToggleConnection,
                     )
-                },
+                }
             )
         }
     ) { innerPadding ->
