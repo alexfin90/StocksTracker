@@ -1,4 +1,4 @@
-package com.alexfin90.stockstracker.designsystem.atomic.atoms
+package com.alexfin90.stockstracker.designsystem.atomic.atoms.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
