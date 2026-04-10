@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -35,14 +37,20 @@ fun ConnectionStatusIndicator(
         Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = if (isConnected) "Connected" else "Disconnected",
-            style = MaterialTheme.typography.bodyMedium,
+            style = MaterialTheme.typography.titleMedium,
         )
     }
 }
 
 
+private class ConnectionStatusProvider : PreviewParameterProvider<Boolean> {
+    override val values: Sequence<Boolean> = sequenceOf(true, false)
+}
+
 @Preview
 @Composable
-private fun ConnectionStatusIndicatorPreview() {
-    ConnectionStatusIndicator(isConnected = true)
+private fun ConnectionStatusIndicatorPreview(
+    @PreviewParameter(ConnectionStatusProvider::class) isConnected: Boolean,
+) {
+    ConnectionStatusIndicator(isConnected = isConnected)
 }

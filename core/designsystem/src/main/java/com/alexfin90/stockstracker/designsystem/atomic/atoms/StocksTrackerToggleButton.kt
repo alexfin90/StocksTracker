@@ -25,7 +25,7 @@ fun StocksTrackerToggleButton(
         onClick = onClick,
         modifier = modifier,
         enabled = enabled,
-        shape = MaterialTheme.shapes.medium,
+        shape = MaterialTheme.shapes.large,
     ) {
         Text(text = if (isConnected) "Stop" else "Start")
     }
